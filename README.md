@@ -39,7 +39,7 @@ var breakfastSchema = new Schema({
   });
 ```
 
-Custom validators
+**Custom validators**
 If the built-in validators aren't enough, there's the custom ones - they are declared by passing a validation function.
 
 For eg:
@@ -56,6 +56,7 @@ var userSchema = new Schema({
         required: [true, 'User phone number required']
       }
     });
+
 //OR
 
 function dummyEmailValidator(candidate) {
