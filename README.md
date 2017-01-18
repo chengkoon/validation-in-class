@@ -4,6 +4,13 @@
 * How do we use validations?
 
 # what are different types of validations?
+client side
+ regex for example
+ plus point - able to validate quicker, and to prevent someone from flooding the server
+
+server side
+ schema for example
+ plus point - a second layer of validation. it's not a bad idea to have more validations
 
 # which ones could be useful?
 
