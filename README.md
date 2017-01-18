@@ -38,5 +38,39 @@ var breakfastSchema = new Schema({
     }
   });
 ```
+
+Custom validators
+If the built-in validators aren't enough, there's the custom ones - they are declared by passing a validation function.
+
+For eg:
+```js
+var userSchema = new Schema({
+      phone: {
+        type: String,
+        validate: {
+          validator: function(v) {
+            return /\d{3}-\d{3}-\d{4}/.test(v);
+          },
+          message: '{VALUE} is not a valid phone number!'
+        },
+        required: [true, 'User phone number required']
+      }
+    });
+//OR
+
+function dummyEmailValidator(candidate) {
+  return candidate === 'mustBeThis@email.com'
+}
+var schema = mongoose.Schema({
+  email: {
+    type: String,
+    required: true,
+    validate: {
+      dummyEmailValidator,
+      'please enter the right email add'
+    }
+  }
+})
+```
 # practice!
 Create a Model with LOTS of validations, to demonstrate the possibilities. Test that it works by sending a POST request in postman/curl and return the errors.
